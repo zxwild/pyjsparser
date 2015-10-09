@@ -1,4 +1,4 @@
-from pyjsparserdata import *
+from .pyjsparserdata import *
  
 
 class BaseNode:
@@ -515,7 +515,7 @@ def node_to_dict(node):
     if isinstance(node, list):
         return [node_to_dict(e) for e in node]
     elif isinstance(node, dict):
-        return {k:node_to_dict(v) for k,v in node.iteritems()}
+        return {k:node_to_dict(v) for k,v in node.items()}
     elif not isinstance(node, BaseNode):
         return node
     dic = {}
